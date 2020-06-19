@@ -700,7 +700,7 @@ void MainWindow::OnConnected(const ConnectionGroupPair &id)
     GlobalConfig.uiConfig.recentConnections.push_front(id);
     ReloadRecentConnectionList();
     //
-    ConnectionManager->StartLatencyTest(id.connectionId);
+//     ConnectionManager->StartLatencyTest(id.connectionId);
     if (GlobalConfig.inboundConfig.systemProxySettings.setSystemProxy)
     {
         MWSetSystemProxy();
@@ -1048,10 +1048,10 @@ void MainWindow::on_action_RCM_LatencyTest_triggered()
         auto widget = GetItemWidget(current);
         if (widget)
         {
-            if (widget->IsConnection())
-                ConnectionManager->StartLatencyTest(widget->Identifier().connectionId);
-            else
-                ConnectionManager->StartLatencyTest(widget->Identifier().groupId);
+//             if (widget->IsConnection())
+//                 ConnectionManager->StartLatencyTest(widget->Identifier().connectionId);
+//             else
+//                 ConnectionManager->StartLatencyTest(widget->Identifier().groupId);
         }
     }
 }
